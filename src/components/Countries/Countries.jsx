@@ -1,4 +1,5 @@
 import React, { use } from "react";
+import Country from "../Country/Country";
 
 const Countries = ({ countriesPromise }) => {
   const countriesData = use(countriesPromise);
@@ -7,7 +8,9 @@ const Countries = ({ countriesPromise }) => {
   return (
     <div>
       <h1>Nadir world on the go...{countries.length}</h1>
-      {countries.map()}
+      {countries.map((country) => (
+        <Country country={country}></Country>
+      ))}
     </div>
   );
 };
